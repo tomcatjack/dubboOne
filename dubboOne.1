@@ -1,0 +1,50 @@
+[2019-07-07 14:56:46.292] - 4156 信息 [main] --- org.apache.catalina.core.StandardService: Starting service [Tomcat]
+[2019-07-07 14:56:46.306] - 4156 信息 [main] --- org.apache.catalina.core.StandardEngine: Starting Servlet Engine: Apache Tomcat/8.5.34
+[2019-07-07 14:56:46.339] - 4156 信息 [localhost-startStop-1] --- org.apache.catalina.core.AprLifecycleListener: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_152\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_152\bin;d:\Program Files\Git\cmd;D:\Program Files\bin;D:\tools\maven3.39\apache-maven-3.5.2\bin;C:\WINDOWS\System32\OpenSSH\;D:\tools\mysql5.5\main\bin;D:\salary\rabbitMq\erl10.0.1\bin;F:\nodejs\;F:\redis\;C:\Users\jeluqi\AppData\Local\Microsoft\WindowsApps;C:\Users\jeluqi\AppData\Roaming\npm;.]
+[2019-07-07 14:56:47.459] - 4156 信息 [localhost-startStop-1] --- org.apache.jasper.servlet.TldScanner: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+[2019-07-07 14:56:47.478] - 4156 信息 [localhost-startStop-1] --- org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/dubboOne]: Initializing Spring embedded WebApplicationContext
+[2019-07-07 14:56:51.481] - 4156 警告 [main] --- org.apache.catalina.core.StandardContext: A context path must either be an empty string or start with a '/' and do not end with a '/'. The path [/] does not meet these criteria and has been changed to []
+[2019-07-07 14:56:51.495] - 4156 信息 [main] --- org.apache.catalina.core.StandardService: Starting service [Tomcat]
+[2019-07-07 14:56:51.496] - 4156 信息 [main] --- org.apache.catalina.core.StandardEngine: Starting Servlet Engine: Apache Tomcat/8.5.34
+[2019-07-07 15:01:12.117] - 4156 严重 [http-nio-9013-exec-5] --- org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcher]: Servlet.service() for servlet [dispatcher] in context with path [/] threw exception
+org.jboss.resteasy.spi.UnhandledException: java.lang.IllegalArgumentException: object is not an instance of declaring class
+	at org.jboss.resteasy.core.ExceptionHandler.handleException(ExceptionHandler.java:247)
+	at org.jboss.resteasy.core.SynchronousDispatcher.writeException(SynchronousDispatcher.java:149)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:372)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:179)
+	at org.jboss.resteasy.plugins.server.servlet.ServletContainerDispatcher.service(ServletContainerDispatcher.java:220)
+	at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:56)
+	at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:51)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at com.alibaba.dubbo.rpc.protocol.rest.DubboHttpServer$RestHandler.handle(DubboHttpServer.java:86)
+	at com.alibaba.dubbo.remoting.http.servlet.DispatcherServlet.service(DispatcherServlet.java:64)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.IllegalArgumentException: object is not an instance of declaring class
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.jboss.resteasy.core.ResourceLocatorInvoker.createResource(ResourceLocatorInvoker.java:81)
+	at org.jboss.resteasy.core.ResourceLocatorInvoker.createResource(ResourceLocatorInvoker.java:60)
+	at org.jboss.resteasy.core.ResourceLocatorInvoker.invoke(ResourceLocatorInvoker.java:102)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:356)
+	... 26 more
+
